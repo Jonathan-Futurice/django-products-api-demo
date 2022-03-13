@@ -33,7 +33,6 @@ create a new project with API Bakery.
 4. Run migrations:
 
         python manage.py migrate
-        python manage.py makemigrations
 
 5. Run the server:
 
