@@ -15,10 +15,7 @@ class Product(models.Model):
         max_length=255,
         blank=True,
     )
-    image_path = models.URLField(
-        max_length=255,
-        blank=True,
-    )
+    image_path = models.ImageField(upload_to="images/")
     name = models.CharField(
         max_length=255,
         blank=False,
