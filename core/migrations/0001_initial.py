@@ -7,18 +7,25 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Product',
+            name="Product",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('barcode', models.CharField(max_length=255, unique=True)),
-                ('description', models.TextField(blank=True, max_length=255)),
-                ('image_path', models.URLField(blank=True, max_length=255)),
-                ('name', models.CharField(default='', max_length=255)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("barcode", models.CharField(max_length=255, unique=True)),
+                ("description", models.TextField(blank=True, max_length=255)),
+                ("image_path", models.URLField(blank=True, max_length=255)),
+                ("name", models.CharField(default="", max_length=255)),
             ],
         ),
     ]
