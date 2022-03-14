@@ -31,8 +31,12 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
-    ]
+      "react-app/jest",
+      "airbnb-typescript"
+    ],
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    }
   },
   "browserslist": {
     "production": [
@@ -48,6 +52,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.2",
+    "eslint-config-airbnb-typescript": "^16.1.2",
     "postcss": "^8.4.8",
     "tailwindcss": "^3.0.23"
   }
