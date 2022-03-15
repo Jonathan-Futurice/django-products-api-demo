@@ -1,4 +1,8 @@
-export const InputSearch = () => {
+interface InputSearchProps {
+  onChange: (value: string) => void,
+}
+
+export const InputSearch = (props: InputSearchProps) => {
   return (
         <div className="relative">
             <label className="sr-only" htmlFor="search"> Search </label>
@@ -8,6 +12,7 @@ export const InputSearch = () => {
                 id="search"
                 type="text"
                 placeholder="Search"
+                onChange={(e) => props.onChange(e.target.value)}
             />
 
             <span className="absolute text-gray-500 -translate-y-1/2 pointer-events-none top-1/2 right-4">
