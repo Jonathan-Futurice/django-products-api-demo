@@ -26,6 +26,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "types:openapi": "swagger-typescript-api -p http://localhost:8000/api/v1/schema/\\?format\\=openapi-json -o ./src/swagger-api/products",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -54,6 +55,7 @@
     "autoprefixer": "^10.4.2",
     "eslint-config-airbnb-typescript": "^16.1.2",
     "postcss": "^8.4.8",
+    "swagger-typescript-api": "^9.3.1",
     "tailwindcss": "^3.0.23"
   }
 }
