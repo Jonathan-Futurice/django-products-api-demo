@@ -4,69 +4,8 @@ import { useParams } from 'react-router-dom';
 import './ProductDetailsPage.css';
 import { Product } from '../../swagger-api/products/Api';
 import { ProductsApi } from '../../Services/products';
-
-const StarRating = () => <>
-    <svg
-        className="w-5 h-5 text-yellow-400"
-        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-    >
-        <path
-            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-    </svg>
-
-    <svg
-        className="w-5 h-5 text-yellow-400"
-        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-    >
-        <path
-            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-    </svg>
-
-    <svg
-        className="w-5 h-5 text-yellow-400"
-        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-    >
-        <path
-            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-    </svg>
-
-    <svg
-        className="w-5 h-5 text-yellow-400"
-        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-    >
-        <path
-            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-    </svg>
-
-    <svg
-        className="w-5 h-5 text-gray-200"
-        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-    >
-        <path
-            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-    </svg>
-</>;
-
-const ProductDescription = (props: { text: string }) => <details className="relative mt-4 group">
-    <summary className="block">
-        <div>
-            <div className="prose max-w-none group-open:hidden">
-                <p>
-                    {props.text.slice(0, 150)}...
-                </p>
-            </div>
-
-            <span
-                className="mt-4 text-sm font-medium underline cursor-pointer group-open:absolute group-open:bottom-0 group-open:left-0 group-open:mt-0">
-                Read More
-              </span>
-        </div>
-    </summary>
-
-    <div className="pb-6 prose max-w-none">
-        {props.text}
-    </div>
-</details>;
+import { ProductDescription } from './components/ProductDescription';
+import { StarRating } from './components/StarRatings';
 
 const ProductDetailsPage = () => {
   const { productId } = useParams();
