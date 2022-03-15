@@ -2,20 +2,18 @@ import React, { useEffect, useState } from 'react';
 import { ProductListItem } from './components/ProductListItem';
 import { WelcomeBanner } from './components/WelcomeBanner';
 import { InputSearch } from './components/InputSearch';
-import { Api, Product } from '../../swagger-api/products/Api';
+import { Product } from '../../swagger-api/products/Api';
+import { ProductsApi } from '../../Services/products';
 
 function HomePage() {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [items, setItems] = useState<Product[] | null>(null);
 
 
-  const api = new Api({
-    baseUrl: 'http://localhost:8000',
-  }).api;
+  const productApi = ProductsApi();
 
   useEffect(() => {
     async function getProductData() {
-      const response = await api.listProducts();
+      const response = await productApi.listProducts();
       if (response.data.results) {
         setItems(response.data.results);
       }
