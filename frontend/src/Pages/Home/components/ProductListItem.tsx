@@ -4,12 +4,10 @@ import { Product } from '../../../swagger-api/products/Api';
 interface ProductListItemProps {
   product: Product
 }
-const sluggify = (value: string) => {
-  return value.replace(/\s+/g, '-').toLowerCase();
-};
+
 export const ProductListItem = ( props: ProductListItemProps) =>
     <Link
-    to={`/product/${sluggify(props.product.name || 'missing')}`}
+    to={`/product/${props.product.id}`}
     className="block"
 >
     <div className="aspect-w-1 aspect-h-1">
