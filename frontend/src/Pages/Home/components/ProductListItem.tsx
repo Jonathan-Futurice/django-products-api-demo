@@ -1,8 +1,15 @@
-import {Link} from "react-router-dom";
+import { Link } from 'react-router-dom';
+import { Product } from '../../../swagger-api/products/Api';
 
-export const ProductListItem = () =>
+interface ProductListItemProps {
+  product: Product
+}
+const sluggify = (value: string) => {
+  return value.replace(/\s+/g, '-').toLowerCase();
+};
+export const ProductListItem = ( props: ProductListItemProps) =>
     <Link
-    to="/product"
+    to={`/product/${sluggify(props.product.name || 'missing')}`}
     className="block"
 >
     <div className="aspect-w-1 aspect-h-1">
@@ -10,13 +17,13 @@ export const ProductListItem = () =>
             loading="lazy"
             alt="Simple Watch"
             className="object-cover rounded"
-            src="https://images.unsplash.com/photo-1523275335684-37898b6baf30"
+            src={props.product.image_path as unknown as string}
         />
     </div>
 
     <div className="mt-2">
         <h5 className="font-medium">
-            Simple Watch
+            {props.product.name}
         </h5>
 
         <p className="mt-1 text-sm text-gray-700">
