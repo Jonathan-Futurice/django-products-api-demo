@@ -33,13 +33,24 @@ create a new project with API Bakery.
 
         python manage.py migrate
 
-5. Run the server:
+5. Seed the database:
+   
+       python manage.py createdata
+
+6. Run the server:
 
         python manage.py runserver
 
-6. Visit the browsable API at http://localhost:8000/api/v1/
+7. Visit the browsable API at http://localhost:8000/api/v1/
 
-7. Access the Django admin at http://localhost:8000/admin/
+8. Access the Django admin at http://localhost:8000/admin/
+
+9. Run the frontend
+        
+       cd frontend
+       npm install
+       npm start
+
 
 ## Running tests
 
@@ -52,3 +63,4 @@ To format the code automatically using `black`,
 just run it in the project directory:
 
     black .
+
